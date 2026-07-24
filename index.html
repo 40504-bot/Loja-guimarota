@@ -4,124 +4,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horário e Férias</title>
+  <title>Katy Fashion K</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      background-color: #080808;
+      color: #D4AF37;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a1a, #000000);
+      width: 100%;
+      padding: 30px 40px;
+      border-bottom: 4px solid #D4AF37;
       text-align: center;
-      padding: 20px;
-      background-color: #f9f9f9;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 3.2em;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #FFDF00;
     }
     .container {
-      max-width: 500px;
-      margin: 0 auto;
-      background: white;
+      max-width: 750px;
+      width: 90%;
+      margin: 30px auto;
+      padding: 35px;
+      background-color: #141414;
+      border: 2px solid #D4AF37;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+      box-sizing: border-box;
+    }
+    h2 {
+      color: #FFDF00;
+      font-size: 1.8em;
+      border-bottom: 2px dashed #D4AF37;
+      padding-bottom: 12px;
+      margin-bottom: 25px;
+    }
+    .morada-card {
+      background-color: #1a1a1a;
+      border: 1px solid #D4AF37;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .morada-card p {
+      margin: 5px 0;
+      color: #fff;
+      font-size: 1.1em;
+    }
+    .horario-card {
+      background-color: #1f1f1f;
+      border-left: 5px solid #D4AF37;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .horario-card strong {
+      color: #fff;
+      font-size: 1.1em;
+    }
+    .horario-card span {
+      color: #D4AF37;
+      font-weight: bold;
+    }
+    .ferias-box {
+      background: linear-gradient(135deg, #2a2206, #141414);
+      border: 2px solid #FFDF00;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+      text-align: center;
+    }
+    .admin-btn {
+      background: transparent;
+      color: #555;
+      border: none;
+      font-size: 0.8em;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+    .admin-panel {
+      display: none;
+      background-color: #222;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 15px;
+      border: 1px solid #444;
+      text-align: left;
     }
-    .status {
+    .admin-panel input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0 15px 0;
+      border-radius: 5px;
+      border: 1px solid #555;
+      background-color: #333;
+      color: #fff;
+      box-sizing: border-box;
+    }
+    .admin-panel button {
+      background-color: #D4AF37;
+      color: #000;
+      border: none;
+      padding: 10px 15px;
       font-weight: bold;
-      padding: 10px;
       border-radius: 5px;
-      margin-top: 15px;
-    }
-    .aberto { background-color: #d4edda; color: #155724; }
-    .fechado { background-color: #f8d7da; color: #721c24; }
-    .ferias { background-color: #fff3cd; color: #856404; }
-    .aviso-ferias {
-      margin-top: 15px;
-      padding: 10px;
-      background-color: #e2e3e5;
-      border-radius: 5px;
-      color: #383d41;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
+  <header>
+    <h1>Katy Fashion K</h1>
+  </header>
+
   <div class="container">
-    <h2>Horário de Funcionamento</h2>
     
-    <p><strong>Segunda-feira:</strong> 14:00 – 19:00</p>
-    <p><strong>Terça a Sexta-feira:</strong> 10:00 – 13:00 | 14:00 – 19:00</p>
-    <p><strong>Sábado:</strong> 10:00 – 13:00</p>
-    <p><strong>Domingo:</strong> Encerrado</p>
+    <div class="morada-card">
+      <p>📍 <strong>Nossa Loja:</strong> Rua Vale de Lobos, Guimarota</p>
+    </div>
 
-    <div id="status-loja" class="status"></div>
+    <h2>Horário de Funcionamento</h2>
 
-    <div id="mensagem-personalizada"></div>
+    <div class="horario-card">
+      <strong>Segunda-feira</strong>
+      <span>14:00 - 19:00</span>
+    </div>
+
+    <div class="horario-card">
+      <strong>Terça a Sexta-feira</strong>
+      <span>10:00 - 13:00 | 14:00 - 19:00</span>
+    </div>
+
+    <div class="horario-card">
+      <strong>Sábado</strong>
+      <span>10:00 - 13:00</span>
+    </div>
+
+    <div class="horario-card">
+      <strong>Domingo</strong>
+      <span style="color: #ff5555;">Encerrado</span>
+    </div>
+
+    <div class="ferias-box">
+      <h3 style="margin-top:0; color:#FFDF00;">☀️ Férias ☀️</h3>
+      <p id="texto-ferias" style="color: #fff; font-size: 1.1em;"></p>
+    </div>
+
+    <button class="admin-btn" onclick="abrirAdmin()">🔐 Painel Privado (Editar Férias)</button>
+
+    <div id="painel-admin" class="admin-panel">
+      <h3 style="color: #FFDF00; margin-top: 0;">Editar Férias da Loja</h3>
+      
+      <label>Data de Início das Férias:</label>
+      <input type="text" id="input-inicio" placeholder="Ex: 01/08/2026">
+
+      <label>Data de Fim das Férias:</label>
+      <input type="text" id="input-fim" placeholder="Ex: 15/08/2026">
+
+      <label>Data de Reabertura:</label>
+      <input type="text" id="input-reabertura" placeholder="Ex: 16/08/2026">
+
+      <button onclick="guardarDatas()">Guardar Alterações</button>
+    </div>
   </div>
 
   <script>
-    // =========================================================================
-    // ⚙️ ÁREA DE CONFIGURAÇÃO (EDITA AQUI AS TUAS FÉRIAS E FRASES)
-    // =========================================================================
-    
-    // 1. FÉRIAS: Muda para true quando fores de férias, ou false quando estiveres a trabalhar
-    const EM_FERIAS = false; 
+    let inicio = localStorage.getItem('ferias_inicio') || "01/08/2026";
+    let fim = localStorage.getItem('ferias_fim') || "15/08/2026";
+    let reabertura = localStorage.getItem('ferias_reabertura') || "16/08/2026";
 
-    // 2. MENSAGEM DE FÉRIAS: Escreve aqui o teu aviso de férias
-    const MENSAGEM_FERIAS = "Encontramo-nos encerrados para férias. Voltamos em breve!";
+    function atualizarMensagem() {
+      document.getElementById('texto-ferias').innerHTML = 
+        `Estaremos encerrados para férias de <strong>${inicio}</strong> a <strong>${fim}</strong>.<br>` +
+        `Reabrimos no dia <strong>${reabertura}</strong> com muitas novidades!`;
+    }
 
-    // 3. FRASES/RECADOS: Escreve aqui qualquer frase ou aviso extra
-    const FRASE_PERSONALIZADA = "Obrigado pela sua visita!";
-
-    // =========================================================================
-    // 🚫 NÃO MEXER NO CÓDIGO ABAIXO
-    // =========================================================================
-    function atualizarStatus() {
-      const agora = new Date();
-      const diaSemana = agora.getDay(); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
-      const horaAtual = agora.getHours() + agora.getMinutes() / 60;
-
-      const statusElement = document.getElementById("status-loja");
-      const msgElement = document.getElementById("mensagem-personalizada");
-
-      // Se estiver de férias
-      if (EM_FERIAS) {
-        statusElement.textContent = "Encerrado para Férias";
-        statusElement.className = "status ferias";
-        msgElement.innerHTML = `<div class="aviso-ferias">${MENSAGEM_FERIAS}</div>`;
-        return;
-      }
-
-      let aberto = false;
-
-      // Segunda-feira (1): 14h às 19h
-      if (diaSemana === 1) {
-        if (horaAtual >= 14 && horaAtual < 19) aberto = true;
-      }
-      // Terça (2) a Sexta (5): 10h às 13h e 14h às 19h
-      else if (diaSemana >= 2 && diaSemana <= 5) {
-        if ((horaAtual >= 10 && horaAtual < 13) || (horaAtual >= 14 && horaAtual < 19)) {
-          aberto = true;
-        }
-      }
-      // Sábado (6): 10h às 13h
-      else if (diaSemana === 6) {
-        if (horaAtual >= 10 && horaAtual < 13) aberto = true;
-      }
-      // Domingo (0): Encerrado
-
-      // Atualiza o estado visual
-      if (aberto) {
-        statusElement.textContent = "Aberto Agora";
-        statusElement.className = "status aberto";
-      } else {
-        statusElement.textContent = "Fechado Agora";
-        statusElement.className = "status fechado";
-      }
-
-      // Mostra a frase personalizada
-      if (FRASE_PERSONALIZADA !== "") {
-        msgElement.innerHTML = `<p style="margin-top: 15px; font-style: italic;">${FRASE_PERSONALIZADA}</p>`;
-      } else {
-        msgElement.innerHTML = "";
+    function abrirAdmin() {
+      const pw = prompt("Escreve a palavra-passe para editar:");
+      if (pw === "1234") {
+        document.getElementById('painel-admin').style.display = "block";
+        document.getElementById('input-inicio').value = inicio;
+        document.getElementById('input-fim').value = fim;
+        document.getElementById('input-reabertura').value = reabertura;
+      } else if (pw !== null) {
+        alert("Palavra-passe errada!");
       }
     }
 
-    atualizarStatus();
+    function guardarDatas() {
+      inicio = document.getElementById('input-inicio').value;
+      fim = document.getElementById('input-fim').value;
+      reabertura = document.getElementById('input-reabertura').value;
+
+      localStorage.setItem('ferias_inicio', inicio);
+      localStorage.setItem('ferias_fim', fim);
+      localStorage.setItem('ferias_reabertura', reabertura);
+
+      atualizarMensagem();
+      document.getElementById('painel-admin').style.display = "none";
+      alert("Férias atualizadas com sucesso!");
+    }
+
+    atualizarMensagem();
   </script>
 
 </body>
