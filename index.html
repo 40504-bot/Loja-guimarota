@@ -46,7 +46,7 @@
     <p><strong>Segunda-feira:</strong> 14:00 – 19:00</p>
     <p><strong>Terça a Sexta-feira:</strong> 10:00 – 13:00 | 14:00 – 19:00</p>
     <p><strong>Sábado:</strong> 10:00 – 13:00</p>
-    <p><strong>Domingo:</strong> Fechado</p>
+    <p><strong>Domingo:</strong> Encerrado</p>
 
     <div id="status-loja" class="status"></div>
 
@@ -58,18 +58,17 @@
     // ⚙️ ÁREA DE CONFIGURAÇÃO (EDITA AQUI AS TUAS FÉRIAS E FRASES)
     // =========================================================================
     
-    // 1. FÉRIAS: Altera para true se estiveres de férias, ou false se estiveres a trabalhar
+    // 1. FÉRIAS: Muda para true quando fores de férias, ou false quando estiveres a trabalhar
     const EM_FERIAS = false; 
 
-    // 2. MENSAGEM DE FÉRIAS: Escreve a frase que queres mostrar durante as férias
+    // 2. MENSAGEM DE FÉRIAS: Escreve aqui o teu aviso de férias
     const MENSAGEM_FERIAS = "Encontramo-nos encerrados para férias. Voltamos em breve!";
 
-    // 3. FRASE EXTRA/AVISO: Podes escrever aqui qualquer frase (ex: "Entregas em 24h", etc.)
-    // Se não quiseres nenhuma frase extra, deixa as aspas vazias ""
+    // 3. FRASES/RECADOS: Escreve aqui qualquer frase ou aviso extra
     const FRASE_PERSONALIZADA = "Obrigado pela sua visita!";
 
     // =========================================================================
-    // 🚫 NÃO PRECISAS DE MEXER NO CÓDIGO ABAIXO
+    // 🚫 NÃO MEXER NO CÓDIGO ABAIXO
     // =========================================================================
     function atualizarStatus() {
       const agora = new Date();
@@ -79,7 +78,7 @@
       const statusElement = document.getElementById("status-loja");
       const msgElement = document.getElementById("mensagem-personalizada");
 
-      // Se estiver de férias ativado
+      // Se estiver de férias
       if (EM_FERIAS) {
         statusElement.textContent = "Encerrado para Férias";
         statusElement.className = "status ferias";
@@ -89,20 +88,21 @@
 
       let aberto = false;
 
-      // Segunda-feira (1)
+      // Segunda-feira (1): 14h às 19h
       if (diaSemana === 1) {
         if (horaAtual >= 14 && horaAtual < 19) aberto = true;
       }
-      // Terça (2) a Sexta (5)
+      // Terça (2) a Sexta (5): 10h às 13h e 14h às 19h
       else if (diaSemana >= 2 && diaSemana <= 5) {
         if ((horaAtual >= 10 && horaAtual < 13) || (horaAtual >= 14 && horaAtual < 19)) {
           aberto = true;
         }
       }
-      // Sábado (6)
+      // Sábado (6): 10h às 13h
       else if (diaSemana === 6) {
         if (horaAtual >= 10 && horaAtual < 13) aberto = true;
       }
+      // Domingo (0): Encerrado
 
       // Atualiza o estado visual
       if (aberto) {
@@ -113,7 +113,7 @@
         statusElement.className = "status fechado";
       }
 
-      // Mostra a frase personalizada se existir
+      // Mostra a frase personalizada
       if (FRASE_PERSONALIZADA !== "") {
         msgElement.innerHTML = `<p style="margin-top: 15px; font-style: italic;">${FRASE_PERSONALIZADA}</p>`;
       } else {
@@ -121,7 +121,6 @@
       }
     }
 
-    // Executa a função ao carregar a página
     atualizarStatus();
   </script>
 
